@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /index.html
-    destination: /usr/share/nginx/html 
+    destination: /home/ubuntu
 hooks:
   BeforeInstall:
     - location: nginx_stop.sh
