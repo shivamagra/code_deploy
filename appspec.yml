@@ -1,0 +1,18 @@
+version: 0.0
+os: linux
+files:
+  - source: /index.html
+    destination: /usr/share/nginx/html 
+hooks:
+  BeforeInstall:
+    - location: nginx_stop.sh
+      timeout: 300
+      runas: root
+  AfterInstall:
+    - location: print.sh
+      timeout: 300
+      runas: root
+  ApplicationStart:
+    - location: start_server.sh
+      timeout: 300
+      runas: root
